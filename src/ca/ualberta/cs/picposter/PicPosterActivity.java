@@ -1,5 +1,12 @@
 package ca.ualberta.cs.picposter;
 
+
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import com.google.gson.Gson;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -9,7 +16,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 import ca.ualberta.cs.picposter.controller.PicPosterController;
+import ca.ualberta.cs.picposter.model.PicPostModel;
 import ca.ualberta.cs.picposter.model.PicPosterModelList;
 import ca.ualberta.cs.picposter.view.PicPostModelAdapter;
 
@@ -75,7 +84,11 @@ public class PicPosterActivity extends Activity {
 
 	public void searchPosts(View view) {
 		String searchTerm = this.searchPostsEditText.getText().toString();
-		
+
+		//HttpClient client = new DefaultHttpClient();
+		//HttpPost request = new HttpPost("http://cmput301.softwareprocess.es:8080/testing/zuo2/_search?q="+searchTerm);
+		//String massage = "You Clicked #" + position + ", which is string:" + textView.getText().toString();
+		//Toast.makeText(PicPosterActivity.this, searchTerm, Toast.LENGTH_LONG).show();
 		//TODO : perform search, update model, etc
 		
 		this.searchPostsEditText.setText(null);
